@@ -29,20 +29,12 @@ struct ContentView: View {
     var body: some View {
       NavigationView {
         List {
-          Section(header: HStack {
-            Image(systemName: "books.vertical.fill").imageScale(.small)
-            Text("Books")
-              .font(.headline)
-          }) {
+          Section(header: ListHeader(icon: "books.vertical.fill", text: "Books")) {
             ForEach(books, id: \.self) {
               book in NavigationLink(book, destination: Text(book))
             }
           }
-          Section(header: HStack {
-            Image(systemName: "music.quarternote.3").imageScale(.small)
-            Text("Artists")
-              .font(.headline)
-          }) {
+          Section(header: ListHeader(icon: "music.quarternote.3", text: "Artists")) {
             ForEach(artists, id: \.self) {
               artist in NavigationLink(artist, destination: Text(artist))
             }
@@ -52,6 +44,18 @@ struct ContentView: View {
         .navigationTitle("Favorites")
       }
     }
+}
+
+struct ListHeader: View {
+  let icon: String
+  let text: String
+  var body: some View {
+    HStack {
+      Image(systemName: icon).imageScale(.small)
+      Text(text)
+        .font(.headline)
+    }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
