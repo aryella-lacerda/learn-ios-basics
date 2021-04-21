@@ -6,51 +6,35 @@
 //
 
 import SwiftUI
+
+var books = [
+  "Harry Potter and the Philosopher's Stone",
+  "Harry Potter and the Chamber of Secrets",
+  "Harry Potter and the Prisoner of Azkaban",
+  "Harry Potter and the Goblet of Fire",
+  "Harry Potter and the Order of the Phoenix",
+  "Harry Potter and the Half-blood Prince",
+  "Harry Potter and the Deathly Hallows"
+]
+
+var artists = [
+  "Sara Barellies",
+  "Imagine Dragons",
+  "Beyoncé"
+]
       
+// MARK: CONTENT
+
 struct ContentView: View {
-    // This top-level view is necessary?
     var body: some View {
-      VStack {
-        HStack {
-          VStack {
-            // Groups are necessary to use more than 10 child views
-            VStack(alignment: .leading) {
-              HStack {
-                Image(systemName: "books.vertical.fill")
-                  .imageScale(/*@START_MENU_TOKEN@*/.large/*@END_MENU_TOKEN@*/)
-                  .foregroundColor(.blue)
-                Text("Books")
-                  .font(.largeTitle)
-              }.padding(.bottom)
-              Text("Harry Potter and the Philosopher's Stone")
-              Text("Harry Potter and the Chamber of Secrets")
-              Text("Harry Potter and the Prisoner of Azkaban")
-              Text("Harry Potter and the Goblet of Fire")
-              Text("Harry Potter and the Order of the Phoenix")
-              Text("Harry Potter and the Half-blood Prince")
-              Text("Harry Potter and the Deathly Hallows")
-            }
-            .padding(.horizontal)
-            
-            HStack {
-              VStack(alignment: .leading) {
-                HStack {
-                  Image(systemName: "music.quarternote.3")
-                    .imageScale(.large)
-                    .foregroundColor(.blue)
-                  Text("Artists").font(.largeTitle)
-                }.padding(.bottom)
-                Text("Sara Barellies")
-                Text("Imagine Dragons")
-                Text("Beyoncé")
-              }
-              Spacer()
-            }
-            .padding([.top, .leading, .trailing])
-          }
-          Spacer()
-        }
-        Spacer()
+      List {
+        ForEach(books, id: \.self, content: {
+          book in Text(book)
+        })
+        
+        ForEach(artists, id: \.self, content: {
+          artist in Text(artist)
+        })
       }
     }
 }
