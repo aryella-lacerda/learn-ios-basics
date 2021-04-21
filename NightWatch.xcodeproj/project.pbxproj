@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		082AD1F42630A3E20004716A /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AD1F32630A3E20004716A /* DetailsView.swift */; };
 		08B0188C2625170800C48DAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B0188B2625170800C48DAA /* AppDelegate.swift */; };
 		08B0188E2625170800C48DAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B0188D2625170800C48DAA /* SceneDelegate.swift */; };
 		08B018902625170800C48DAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B0188F2625170800C48DAA /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		082AD1F32630A3E20004716A /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		08B018882625170800C48DAA /* NightWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NightWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08B0188B2625170800C48DAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08B0188D2625170800C48DAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				08B018962625170D00C48DAA /* LaunchScreen.storyboard */,
 				08B018992625170D00C48DAA /* Info.plist */,
 				08B018932625170D00C48DAA /* Preview Content */,
+				082AD1F32630A3E20004716A /* DetailsView.swift */,
 			);
 			path = NightWatch;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08B0188C2625170800C48DAA /* AppDelegate.swift in Sources */,
+				082AD1F42630A3E20004716A /* DetailsView.swift in Sources */,
 				08B0188E2625170800C48DAA /* SceneDelegate.swift in Sources */,
 				08B018902625170800C48DAA /* ContentView.swift in Sources */,
 			);

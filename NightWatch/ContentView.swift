@@ -31,12 +31,12 @@ struct ContentView: View {
         List {
           Section(header: ListHeader(icon: "books.vertical.fill", text: "Books")) {
             ForEach(books, id: \.self) {
-              book in NavigationLink(book, destination: Text(book))
+              book in NavigationLink(book, destination: DetailsView(item: book))
             }
           }
           Section(header: ListHeader(icon: "music.quarternote.3", text: "Artists")) {
             ForEach(artists, id: \.self) {
-              artist in NavigationLink(artist, destination: Text(artist))
+              artist in NavigationLink(artist, destination: DetailsView(item: artist))
             }
           }
         }
