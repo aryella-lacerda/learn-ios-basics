@@ -15,9 +15,13 @@ struct ContentView: View {
           VStack {
             // Groups are necessary to use more than 10 child views
             VStack(alignment: .leading) {
-              Text("Books")
-                .font(.largeTitle)
-                .padding(.bottom)
+              HStack {
+                Image(systemName: "books.vertical.fill")
+                  .imageScale(/*@START_MENU_TOKEN@*/.large/*@END_MENU_TOKEN@*/)
+                  .foregroundColor(.blue)
+                Text("Books")
+                  .font(.largeTitle)
+              }.padding(.bottom)
               Text("Harry Potter and the Philosopher's Stone")
               Text("Harry Potter and the Chamber of Secrets")
               Text("Harry Potter and the Prisoner of Azkaban")
@@ -30,7 +34,12 @@ struct ContentView: View {
             
             HStack {
               VStack(alignment: .leading) {
-                Text("Artists").font(.largeTitle).padding(.bottom)
+                HStack {
+                  Image(systemName: "music.quarternote.3")
+                    .imageScale(.large)
+                    .foregroundColor(.blue)
+                  Text("Artists").font(.largeTitle)
+                }.padding(.bottom)
                 Text("Sara Barellies")
                 Text("Imagine Dragons")
                 Text("Beyoncé")
