@@ -27,25 +27,30 @@ var artists = [
 
 struct ContentView: View {
     var body: some View {
-      List {
-        Section(header: HStack {
-          Image(systemName: "books.vertical.fill").imageScale(.small)
-          Text("Books")
-        }) {
-          ForEach(books, id: \.self, content: {
-            book in Text(book)
-          })
+      NavigationView {
+        List {
+          Section(header: HStack {
+            Image(systemName: "books.vertical.fill").imageScale(.small)
+            Text("Books")
+              .font(.headline)
+          }) {
+            ForEach(books, id: \.self) {
+              book in NavigationLink(book, destination: Text(book))
+            }
+          }
+          Section(header: HStack {
+            Image(systemName: "music.quarternote.3").imageScale(.small)
+            Text("Artists")
+              .font(.headline)
+          }) {
+            ForEach(artists, id: \.self) {
+              artist in NavigationLink(artist, destination: Text(artist))
+            }
+          }
         }
-        Section(header: HStack {
-          Image(systemName: "music.quarternote.3").imageScale(.small)
-          Text("Artists")
-        }) {
-          ForEach(artists, id: \.self, content: {
-            artist in Text(artist)
-          })
-        }
-        
-      }.listStyle(GroupedListStyle())
+        .listStyle(GroupedListStyle())
+        .navigationTitle("Favorites")
+      }
     }
 }
 
