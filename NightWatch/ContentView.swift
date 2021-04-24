@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
  
 struct ContentView: View {
     var body: some View {
@@ -25,47 +24,42 @@ struct ContentView: View {
 
 // MARK: Character Screen
 
-let heroes = [
-  Character(name: "Iron Man", isFavorite: true),
-  Character(name: "Dr. Strange", isFavorite: false),
-  Character(name: "Hawkeye", isFavorite: false),
-  Character(name: "Black Widow", isFavorite: false),
-  Character(name: "Captain America", isFavorite: false),
-  Character(name: "Thor", isFavorite: false),
-]
-
 struct CharacterScreen: View {
+  @State private var hero = Character(name: "Iron Man", isFavorite: true)
+  
   var body: some View {
     NavigationView {
       List {
-        ForEach(heroes, id: \.name) {
-          hero in CharacterItem(
-            name: hero.name,
-            isFavorite: hero.isFavorite
-          )
-        }
+        CharacterItem(hero: self.$hero)
       }.navigationTitle("Characters")
     }
   }
 }
 
 struct CharacterItem: View {
-  let name: String
-  let isFavorite: Bool
+  @Binding var hero: Character
   
   var body: some View {
     HStack {
       Image(systemName: "person.circle.fill")
         .imageScale(.large)
-      Text(name)
+      Text(hero.name)
         .font(.headline)
       Spacer()
-      if isFavorite {
-        Image(systemName: "star.fill")
-          .foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/)
+      if hero.isFavorite {
+        Button(action: {
+          hero.isFavorite = false
+        }) {
+          Image(systemName: "star.fill")
+            .foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/)
+        }
       } else {
-        Image(systemName: "star")
-          .foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/)
+        Button(action: {
+          hero.isFavorite = true
+        }) {
+          Image(systemName: "star")
+            .foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/)
+        }
       }
     }
   }
