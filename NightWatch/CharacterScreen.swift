@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CharacterScreen: View {
   @EnvironmentObject var characterSource: CharacterSource
+  @State var isFavoriteFilterOn = false
 
   var body: some View {
     NavigationView {
@@ -21,11 +22,13 @@ struct CharacterScreen: View {
           
           ForEach(pairs, id: \.0.id) {
             hero, index in
-          
-            let hero = $characterSource.heroes[index]
-            NavigationLink(destination: DetailsScreen(character: hero), label: {
-              CharacterItem(character: hero.wrappedValue)
-            })
+            let boundHero = $characterSource.heroes[index]
+            
+            if !isFavoriteFilterOn || (isFavoriteFilterOn && hero.isFavorite) {
+              NavigationLink(destination: DetailsScreen(character: boundHero), label: {
+                CharacterItem(character: hero)
+              })
+            }
           }
         }
         
@@ -36,14 +39,22 @@ struct CharacterScreen: View {
           
           ForEach(pairs, id: \.0.id) {
             villain, index in
+            let boundVillain = $characterSource.villains[index]
             
-            let villain = $characterSource.villains[index]
-            NavigationLink(destination: DetailsScreen(character: villain), label: {
-              CharacterItem(character: villain.wrappedValue)
-            })
+            if !isFavoriteFilterOn || (isFavoriteFilterOn && villain.isFavorite) {
+              NavigationLink(destination: DetailsScreen(character: boundVillain), label: {
+                CharacterItem(character: villain)
+              })
+            }
           }
         }
-      }.navigationTitle("Characters")
+      }.navigationTitle("Characters").toolbar{
+        ToolbarItem(placement: .bottomBar) {
+          Toggle(isOn: $isFavoriteFilterOn, label: {
+            Text("Filter Favorites")
+          })
+        }
+      }
     }
   }
 }
