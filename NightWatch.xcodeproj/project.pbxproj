@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0823F72B2634BF9800F5D035 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0823F72A2634BF9800F5D035 /* Character.swift */; };
-		082AD1F42630A3E20004716A /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AD1F32630A3E20004716A /* DetailsView.swift */; };
+		082AD1F42630A3E20004716A /* DetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AD1F32630A3E20004716A /* DetailsScreen.swift */; };
 		0839BC5B263CC6D100802023 /* CharacterSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0839BC5A263CC6D100802023 /* CharacterSource.swift */; };
 		0839BC5E263CC86E00802023 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0839BC5D263CC86E00802023 /* App.swift */; };
+		0839BC61263CCDBB00802023 /* FavoritesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0839BC60263CCDBB00802023 /* FavoritesScreen.swift */; };
+		0839BC64263CCE0400802023 /* CharacterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0839BC63263CCE0400802023 /* CharacterScreen.swift */; };
 		08B0188C2625170800C48DAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B0188B2625170800C48DAA /* AppDelegate.swift */; };
 		08B0188E2625170800C48DAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B0188D2625170800C48DAA /* SceneDelegate.swift */; };
 		08B018902625170800C48DAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B0188F2625170800C48DAA /* ContentView.swift */; };
@@ -21,9 +23,11 @@
 
 /* Begin PBXFileReference section */
 		0823F72A2634BF9800F5D035 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		082AD1F32630A3E20004716A /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		082AD1F32630A3E20004716A /* DetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreen.swift; sourceTree = "<group>"; };
 		0839BC5A263CC6D100802023 /* CharacterSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSource.swift; sourceTree = "<group>"; };
 		0839BC5D263CC86E00802023 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		0839BC60263CCDBB00802023 /* FavoritesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesScreen.swift; sourceTree = "<group>"; };
+		0839BC63263CCE0400802023 /* CharacterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterScreen.swift; sourceTree = "<group>"; };
 		08B018882625170800C48DAA /* NightWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NightWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08B0188B2625170800C48DAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08B0188D2625170800C48DAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,10 +75,12 @@
 				08B018962625170D00C48DAA /* LaunchScreen.storyboard */,
 				08B018992625170D00C48DAA /* Info.plist */,
 				08B018932625170D00C48DAA /* Preview Content */,
-				082AD1F32630A3E20004716A /* DetailsView.swift */,
+				082AD1F32630A3E20004716A /* DetailsScreen.swift */,
 				0823F72A2634BF9800F5D035 /* Character.swift */,
 				0839BC5A263CC6D100802023 /* CharacterSource.swift */,
 				0839BC5D263CC86E00802023 /* App.swift */,
+				0839BC60263CCDBB00802023 /* FavoritesScreen.swift */,
+				0839BC63263CCE0400802023 /* CharacterScreen.swift */,
 			);
 			path = NightWatch;
 			sourceTree = "<group>";
@@ -160,7 +166,9 @@
 				0839BC5B263CC6D100802023 /* CharacterSource.swift in Sources */,
 				0823F72B2634BF9800F5D035 /* Character.swift in Sources */,
 				08B0188C2625170800C48DAA /* AppDelegate.swift in Sources */,
-				082AD1F42630A3E20004716A /* DetailsView.swift in Sources */,
+				0839BC61263CCDBB00802023 /* FavoritesScreen.swift in Sources */,
+				082AD1F42630A3E20004716A /* DetailsScreen.swift in Sources */,
+				0839BC64263CCE0400802023 /* CharacterScreen.swift in Sources */,
 				08B0188E2625170800C48DAA /* SceneDelegate.swift in Sources */,
 				0839BC5E263CC86E00802023 /* App.swift in Sources */,
 				08B018902625170800C48DAA /* ContentView.swift in Sources */,

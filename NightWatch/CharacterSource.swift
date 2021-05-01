@@ -1,14 +1,14 @@
 import Foundation
 
 class CharacterSource: ObservableObject {
-  let heroes = [
+  @Published var heroes = [
     Character(name: "Iron Man", isFavorite: true),
     Character(name: "Captain America", isFavorite: false),
     Character(name: "Black Widow", isFavorite: false),
     Character(name: "Harry Potter", isFavorite: false)
   ]
 
-  let villains = [
+  @Published var villains = [
     Character(name: "Thanos", isFavorite: true),
     Character(name: "Lord Voldemort", isFavorite: false),
     Character(name: "Mandarin", isFavorite: false),
