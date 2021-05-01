@@ -10,6 +10,7 @@ import SwiftUI
 struct CharacterScreen: View {
   @EnvironmentObject var characterSource: CharacterSource
   @State var isFavoriteFilterOn = false
+  @State var isResetConfirmationShowing = false
 
   var body: some View {
     NavigationView {
@@ -67,11 +68,20 @@ struct CharacterScreen: View {
         }
         ToolbarItem(placement: .navigationBarLeading) {
           Button("Reset") {
+            isResetConfirmationShowing = true
+          }
+        }
+      }.alert(isPresented: $isResetConfirmationShowing){
+        Alert(
+          title: Text("Reset"),
+          message: Text("Are you sure?"),
+          primaryButton: .cancel(),
+          secondaryButton: .destructive(Text("Yes"), action: {
             let newSource = CharacterSource()
             self.characterSource.heroes = newSource.heroes
             self.characterSource.villains = newSource.villains
-          }
-        }
+          })
+        )
       }
     }
   }
