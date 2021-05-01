@@ -65,6 +65,13 @@ struct CharacterScreen: View {
         ToolbarItem(placement: .navigationBarTrailing) {
           EditButton()
         }
+        ToolbarItem(placement: .navigationBarLeading) {
+          Button("Reset") {
+            let newSource = CharacterSource()
+            self.characterSource.heroes = newSource.heroes
+            self.characterSource.villains = newSource.villains
+          }
+        }
       }
     }
   }
