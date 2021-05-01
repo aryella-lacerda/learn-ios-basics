@@ -29,7 +29,11 @@ struct CharacterScreen: View {
                 CharacterItem(character: hero)
               })
             }
-          }
+          }.onDelete(perform: { indexSet in
+            characterSource.heroes.remove(atOffsets: indexSet)
+          }).onMove(perform: { indices, newOffset in
+            characterSource.heroes.move(fromOffsets: indices, toOffset: newOffset)
+          })
         }
         
         Section(header: SectionTitle(title: "Villains")) {
@@ -46,13 +50,20 @@ struct CharacterScreen: View {
                 CharacterItem(character: villain)
               })
             }
-          }
+          }.onDelete(perform: { indexSet in
+            characterSource.villains.remove(atOffsets: indexSet)
+          }).onMove(perform: { indices, newOffset in
+            characterSource.villains.move(fromOffsets: indices, toOffset: newOffset)
+          })
         }
       }.navigationTitle("Characters").toolbar{
         ToolbarItem(placement: .bottomBar) {
           Toggle(isOn: $isFavoriteFilterOn, label: {
             Text("Filter Favorites")
           })
+        }
+        ToolbarItem(placement: .navigationBarTrailing) {
+          EditButton()
         }
       }
     }
